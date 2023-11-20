@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if(self.value === 'night'){
+            target.style.backgroundColor = 'black';
+            target.style.coltargetr = 'white';
+            self.value = 'day';
+            } else{
+            target.style.backgroundColor = 'white';
+            target.style.color = 'black';
+            self.value = 'night';
+        }
+        }
+    </script>
+</head>
+
+
+
+<body>
+    <input type="button" value="hi" onclick="alert('hi')">
+    <input type="text" onchange="alert('changed')">
+    <input type="text" onkeydown="alert('key down')">
+    <br>
+    안녕하세요
+    <input type="button" value="Night" onclick="document.querySelector('body').style.backgroundColor = 'black'">
+    <input type="button" value="Day" onclick="document.querySelector('body').style.backgroundColor = 'white'">
+
+
+    <!--자바스크립트 활용-->
+    <input id="night_day" type="button" value=  "night" onclick="
+    if(document.querySelector('#night_day').value === 'night'){
+        document.querySelector('body').style.backgroundColor = 'black';
+        document.querySelector('body').style.color = 'white';
+        document.querySelector('#night_day').value = 'day';
+    } else{
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black';
+        document.querySelector('#night_day').value = 'night';
+    }
+    ">
+
+    <!--자기자신을 가리키는 this 활용-->
+    <input  type="button" value= "night" onclick="
+    if(this.value === 'night'){
+        document.querySelector('body').style.backgroundColor = 'black';
+        document.querySelector('body').style.color = 'white';
+        this.value = 'day';
+    } else{
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black';
+        this.value = 'night';
+    }
+    ">
+
+    <!--코드의 중복 최소화(변수 설정)-->
+    <input  type="button" value= "night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+        target.style.backgroundColor = 'black';
+        target.style.coltargetr = 'white';
+        this.value = 'day';
+    } else{
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        this.value = 'night';
+    }
+    ">
+
+
+
+<!--함수설정-->
+<!--함수를 새로설정하면 자신의 벨류값을 나타내는 this의 효과가 없어짐-->
+<!--인자값으로 this를 주고 매개변수 self에서 받는형식(self는 단순 매개변수명)-->
+<input  type="button" value= "night" onclick="
+    nightDayHandler(this);
+">
+
+
+
+
+
+
+
+
+
+</body>
+</html> 

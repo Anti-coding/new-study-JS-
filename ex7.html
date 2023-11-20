@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <!--배열과 반복문의 융힙활용-->
+    <h1>Loop & Array</h1>
+    <script>
+        var coworkers = ['a','b','c','d','e'];
+    </script>
+    <h2>co workers</h2>
+    <ul>
+        <!--해당 로직은 배열이 증가,감소되도 배열의 원소를 유동적으로 1씩 호출해준다-->
+        <script>
+            var i = 0;
+            while(i<coworkers.length){
+            document.write('<li><a href ="https://www.opentutorials.org/course/3975/26781'+coworkers[i]+'">'+coworkers[i]+'</a></li>');
+            i = i+1;
+            }
+        </script>
+    </ul>
+
+</body>
+</html>
