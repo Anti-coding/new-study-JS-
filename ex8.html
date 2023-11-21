@@ -3,21 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <!--함수설정으로 코드 간략화-->
-    <script>
-        function nightDayHandler(self){
-            var target = document.querySelector('body');
-            if(self.value === 'night'){
-            target.style.backgroundColor = 'black';
-            target.style.coltargetr = 'white';
-            self.value = 'day';
-            } else{
-            target.style.backgroundColor = 'white';
-            target.style.color = 'black';
-            self.value = 'night';
-        }
-        }
-    </script>
+    <!--제이쿼리 CDN사용,js코드의 편의성을 높여줌-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!--함수설정으로 코드 간략화+js파일로 쪼개기-->
+    <script src="colors.js"></script>
 </head>
 
 
@@ -74,7 +64,7 @@
 
 
 
-<!--함수설정-->
+<!--함수설정+js파일로 쪼개기-->
 <!--함수를 새로설정하면 자신의 벨류값을 나타내는 this의 효과가 없어짐-->
 <!--인자값으로 this를 주고 매개변수 self에서 받는형식(self는 단순 매개변수명)-->
 <input  type="button" value= "night" onclick="
